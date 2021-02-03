@@ -27,13 +27,12 @@ $ python justify_line.py <text_to_justify> <line_width>
 $ python justify_line.py 'La historia de la ópera tiene una duración relativamente corta dentro del contexto de la historia de la música en general: apareció en 1597, fecha en que se creó la primera ópera.' 30
 
 La  historia de la ópera tiene
-una   duración   relativamente  
+una   duración   relativamente
 corta  dentro  del contexto de
 la  historia  de  la música en
-general:  apareció  en  1597, 
-fecha   en  que  se  creó  la 
+general:   apareció  en  1597,
+fecha   en   que  se  creó  la
 ópera.
- 
 ```
 
 ## Development scenario
@@ -41,7 +40,7 @@ fecha   en  que  se  creó  la
 * `Conda` environment.
 * `Jupyterlab` for draft code.
 * `Pycharm` IDE.
-* `black`, `flake8` and `isort` for code review.
+* `black`, `flake8` and `isort` for linting.
 
 ## TODO
 

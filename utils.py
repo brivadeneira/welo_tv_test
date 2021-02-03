@@ -11,12 +11,13 @@ def balance_line(line_width: int, line: list) -> list:
     """
     line_length = len("".join(line))
     equal_space = (line_width - line_length) // (len(line) - 1)
-    equal_space_length = equal_space * len(line) + line_length
+    equal_space_length = equal_space * (len(line) - 1) + line_length
     extra_space = line_width - equal_space_length
 
     justified_line = []
-    for word in line:
+    for word in line[:-1]:
         justified_line.append(word + " " * equal_space)
+    justified_line.append(line[-1])
     if extra_space != 0:
         i = 0
         while extra_space > 0:
