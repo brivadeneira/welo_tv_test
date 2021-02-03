@@ -9,18 +9,18 @@ def balance_line(line_width: int, line: list) -> list:
     :return: a list with spaces added to each word
     according to the line_width desired.
     """
-    line_length = len(''.join(line))
+    line_length = len("".join(line))
     equal_space = (line_width - line_length) // (len(line) - 1)
     equal_space_length = equal_space * len(line) + line_length
     extra_space = line_width - equal_space_length
 
     justified_line = []
     for word in line:
-        justified_line.append(word + ' ' * equal_space)
+        justified_line.append(word + " " * equal_space)
     if extra_space != 0:
         i = 0
         while extra_space > 0:
-            justified_line[i] += ' '
+            justified_line[i] += " "
             i += 1
             extra_space -= 1
     return justified_line
@@ -34,7 +34,7 @@ def print_justified_text(justified_lines: list) -> None:
     """
     print()
     for line in justified_lines:
-        print(''.join(line))
+        print("".join(line))
 
 
 def check_line_width(words: list, line_width: int) -> bool:

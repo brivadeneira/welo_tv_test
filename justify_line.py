@@ -10,7 +10,7 @@ def justify_text(text: str, line_width: int) -> list:
     :param line_width: (int) line_width wanted
     :return: (list) with justified lines
     """
-    words = text.replace(' ', '* ').split('*')
+    words = text.replace(" ", "* ").split("*")
     if not check_line_width(words, line_width):
         raise ValueError(f"A word length exceeds the long {line_width} width.")
 
@@ -21,13 +21,13 @@ def justify_text(text: str, line_width: int) -> list:
     for word in words:
         if not line:
             # remove the space at the beginning of the line
-            word = word.replace(' ', '')
+            word = word.replace(" ", "")
         char_sum += len(word)
         line.append(word)
         if char_sum >= line_width:
             if char_sum > line_width:
                 lines.append(line[:-1])
-                last_word = line[-1].replace(' ', '')
+                last_word = line[-1].replace(" ", "")
                 # extra word will be the beginning of next line
                 line = [last_word]
                 char_sum = len(last_word)
@@ -39,7 +39,7 @@ def justify_text(text: str, line_width: int) -> list:
 
     # check if there is more words in the text
     if lines[-1][-1] != words[-1]:
-        word = words[-1].replace(' ', '')
+        word = words[-1].replace(" ", "")
         lines.append([word])
 
     justified_lines = []
@@ -53,10 +53,8 @@ def justify_text(text: str, line_width: int) -> list:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('text', type=str,
-                        help='a text to justify')
-    parser.add_argument('width', type=int,
-                        help='the line width wanted')
+    parser.add_argument("text", type=str, help="a text to justify")
+    parser.add_argument("width", type=int, help="the line width wanted")
     args = parser.parse_args()
 
     text = args.text
@@ -66,5 +64,5 @@ def main():
     print_justified_text(justified_lines)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
